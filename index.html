@@ -33,6 +33,8 @@
 
         <!-- Carte lorsqu'il y a des questions -->
         <div class="card-body" v-if="current < quiz.length">
+
+          <span v-if="current === 0"><img src="./q1.gif" class="rounded mx-auto d-block" alt="throwing_cigarette" /></span>
           <h4 class="card-title">{{ step.question }}</h4>
 
           <!-- Boutons pour les QCM -->
@@ -42,14 +44,14 @@
           <input type="text" ref="textInput" v-if="!step.choices" class="form-control" :class="{'is-valid': success === true, 'is-invalid': success === false}" placeholder="Écrivez votre réponse" v-on:keyup.enter="submitText()"  :disabled="success === false">
 
           <!-- Résultat -->
-          <p class="lead mt-2" v-if="success === true">Bien vu !</p>
-          <p class="lead mt-2" v-if="success === false">Raté ! <span v-if="!step.choices">La réponse était {{ step.answer }}</span></p>
-          <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Prochaine question</button>
+          <p class="lead mt-2" v-if="success === true"><span>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-if="success === false"><span>{{ step.failed_message }}</span></p>
+          <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Next Question</button>
         </div>
 
         <!-- Carte lorsque toutes les questions ont été complétées -->
         <div class="card-body" v-if="current == quiz.length">
-          <h4 class="card-title">Vous avez terminé !</h4>
+          <h4 class="card-title">You are done!</h4>
           <p class="card-text">Votre score est de {{score}} sur {{quiz.length}}</p>
         </div>
       </div>
