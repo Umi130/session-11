@@ -10,7 +10,7 @@ var quiz = [
   {
     question: "What is the country that is considered to be most respectful toward the environment",
     answer: "Finland",
-    image: "",
+    image: "Finland.jpg",
     success_message: "Y",
     failed_message: "N"
   },

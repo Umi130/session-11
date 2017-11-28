@@ -24,7 +24,7 @@
 
     <!-- Header -->
     <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Recycling Quiz</span>
+      <span class="navbar-brand mb-0 h1">Environment Quiz</span>
     </nav>
 
     <!-- Carte principale -->
@@ -44,7 +44,8 @@
           <input type="text" ref="textInput" v-if="!step.choices" class="form-control" :class="{'is-valid': success === true, 'is-invalid': success === false}" placeholder="Écrivez votre réponse" v-on:keyup.enter="submitText()"  :disabled="success === false">
 
           <!-- Résultat -->
-          <p class="lead mt-2" v-if="success === true"><span>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-if="success === true && current === 1"><span><img src="./Finland.jpg" class="rounded mx-auto d-block" alt="Finland Flag"/>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-else-if="success === true"><span>{{ step.success_message }}</span></p>
           <p class="lead mt-2" v-if="success === false"><span>{{ step.failed_message }}</span></p>
           <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Next Question</button>
         </div>
