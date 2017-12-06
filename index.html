@@ -14,21 +14,21 @@
       display: none !important; /* Permet de ne rien afficher avant la fin du chargement */
     }
     main .card {
-      width: 45rem;
+      width: 55rem;
     }
   </style>
 </head>
 
-<body>
+<body background ="./Bgimage.jpg">
   <div id="app" class="container">
 
     <!-- Header -->
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">An ocean of rubbish</span>
+    <nav class="navbar navbar-light">
+      <span class=" text-center text-uppercase text-info h1">An ocean of rubbish</span>
     </nav>
 
     <!-- Carte principale -->
-    <main class="d-flex align-items-center justify-content-md-center" v-cloak>
+    <main class="d-flex align-items-center justify-content-md-center bg-info" v-cloak>
       <div class="card">
 
         <!-- Carte lorsqu'il y a des questions -->
@@ -42,16 +42,20 @@
           <input type="text" ref="textInput" v-if="!step.choices" class="form-control" :class="{'is-valid': success === true, 'is-invalid': success === false}" placeholder="Écrivez votre réponse" v-on:keyup.enter="submitText()"  :disabled="success === false">
 
           <!-- Résultat -->
-          <p class="lead mt-2" v-if="success === true && current === 0"><span><img src="./q1.gif" class="rounded mx-auto d-block" alt="throwing_cigarettes"/>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-if="success === true && current === 7"><span><img src="./q1.gif" class="rounded mx-auto d-block" alt="A cigarette butt thrown"/>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-else-if="success === true && current === 2"><span><img src="./Seabird.jpg" class="rounded mx-auto d-block" height= 180px alt="A seabird eating plastic"/>{{ step.success_message }}</span></p>
+           <p class="lead mt-2" v-else-if="success === true && current === 4"><span><img src="./PlasticFinalDestination.gif" class="rounded mx-auto d-block" height= 180px alt="Plastic Final Destination"/>{{ step.success_message }}</span></p>
           <p class="lead mt-2" v-else-if="success === true"><span>{{ step.success_message }}</span></p>
-          <p class="lead mt-2" v-if="success === false"><span>{{ step.failed_message }}</span></p>
+         
+          <p class="lead mt-2" v-if="success === false && current === 4"><span><img src="./PlasticFinalDestination.gif" class="rounded mx-auto d-block" height= 180px alt="Plastic Final Destination"/>{{ step.failed_message }}</span></p>
+          <p class="lead mt-2" v-else-if="success === false"><span>{{ step.failed_message }}</span></p>
           <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Next Question</button>
         </div>
 
         <!-- Carte lorsque toutes les questions ont été complétées -->
         <div class="card-body" v-if="current == quiz.length">
           <h4 class="card-title">You are done!</h4>
-          <p class="card-text">Votre score est de {{score}} sur {{quiz.length}}</p>
+          <p class="card-text">Your score is {{score}} / {{quiz.length}}</p>
         </div>
       </div>
     </main>

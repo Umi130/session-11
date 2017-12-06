@@ -10,7 +10,7 @@ var quiz = [
     choices: ["2025","2050", "2075", "Never"],
     answer: 1,
     success_message: "That is correct. The Ellen MacArthur Foundation reported at the World Economic Forum in 2016 that, if business goes as usual, the ocean will contain 1 tonne of plastic for every 3 tonnes of fish by 2025 and more plastic than fish by 2050.",
-    failed_message: "The correct answer is 2050. The Ellen MacArthur Foundation reported at the World Economic Forum in 2016 that if business goes usual, the ocean will contain 1 tonnes of plastic for every tonnes of fish by 2025."
+    failed_message: "The correct answer is 2050. The Ellen MacArthur Foundation reported at the World Economic Forum in 2016 that if business goes usual, the ocean will contain 1 tonnes of plastic for every tonnes of fish by 2025 and more plastic than fish by 2050."
   },
   {
     question: "How many percent of seabirds eat plastic on a regular basis ?",
@@ -24,14 +24,14 @@ var quiz = [
     choices: ["1/6th", "the same size", "6 times more"],
     answer: 2,
     success_message:"Indeed, that represents 3,5 million square kilometers. But in reality this plastic continent is made of much plastic, most of it is not visible because it is caught underwater. If we were to take it out of the water, it would cover the surface of all the oceans.",
-    failed_message: "It's 6 times more the size France, in other words 3,5 million square kilometers. But is ever more unbelievable is that this is only the surface. If we were to take out of the water all the plastic that are being kept under the surface, it would be able to cover the surface of all the oceans."
+    failed_message: "It's 6 times more the size France, in other words 3,5 million square kilometers. And this is only the surface... If we were to take out of the water all the plastic that are being kept under the surface, it would be able to cover the surface of all the oceans."
   },
     {
     question: "Where is located the biggest plastic continent?",
-    choices: ["1", "2", "3"],
+    choices: ["In the Pacific Ocean", "In the Atlantic Ocean", "In the Indian Ocean"],
     answer: 0,
-    success_message: "That is right, the biggest plastic continent also called the Great Pacific Garbage Patch is located in the pacific ocean between Hawai and the californian coast. Actually, the two other images are real and show the other (smaller) plastic patch.",
-    failed_message: "The biggest plastic continent is located in the pacific ocean between Hawai and the californian coast. Actually, the two images are real and show the other (smaller) plastic patch."
+    success_message: "That is right, the biggest plastic continent also called the Great Pacific Garbage Patch is located in the Pacific oOcean between Hawai and the californian coast.",
+    failed_message: "The biggest plastic continent also called the Great Pacific Garbage Patch is located in the Pacific ocean between Hawai and the Californian coast."
   },
    {
     question: "For how many per cent does land-based pollution account for marine pollution",
@@ -42,7 +42,7 @@ var quiz = [
   },  
   {
     question: "Boyan Slat is the founder of the project Ocean Cleanup. What is his project about?",
-    choices: ["Install floating traps to recover plastic in the ocean", "Commercialise a new kind of plastic that also serve as food for marine species", "Invent a liquid solution that will decompose plastic in safe bits"],
+    choices: ["Install floating traps to recover plastic in the ocean", "Commercialise a new kind of plastic on which marine species can safely feed on", "Invent a liquid solution that will decompose plastic in safe bits"],
     answer: 0,
     success_message: "That's correct, Boyan plans actually to launch its first mission in the coming months. He hopes to clean 50% of the Great Pacific Gargage Patch within 5 years.",
     failed_message: "The correct answer is to install floating traps to recover plastic in the ocean. He hopes to clean 50% of the Great Pacific Gargage Patch within 5 years."
