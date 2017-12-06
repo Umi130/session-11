@@ -42,13 +42,8 @@
           <input type="text" ref="textInput" v-if="!step.choices" class="form-control" :class="{'is-valid': success === true, 'is-invalid': success === false}" placeholder="Écrivez votre réponse" v-on:keyup.enter="submitText()"  :disabled="success === false">
 
           <!-- Résultat -->
-          <p class="lead mt-2" v-if="success === true && current === 7"><span><img src="./q1.gif" class="rounded mx-auto d-block" alt="A cigarette butt thrown"/>{{ step.success_message }}</span></p>
-          <p class="lead mt-2" v-else-if="success === true && current === 2"><span><img src="./Seabird.jpg" class="rounded mx-auto d-block" height= 180px alt="A seabird eating plastic"/>{{ step.success_message }}</span></p>
-           <p class="lead mt-2" v-else-if="success === true && current === 4"><span><img src="./PlasticFinalDestination.gif" class="rounded mx-auto d-block" height= 180px alt="Plastic Final Destination"/>{{ step.success_message }}</span></p>
-          <p class="lead mt-2" v-else-if="success === true"><span>{{ step.success_message }}</span></p>
-         
-          <p class="lead mt-2" v-if="success === false && current === 4"><span><img src="./PlasticFinalDestination.gif" class="rounded mx-auto d-block" height= 180px alt="Plastic Final Destination"/>{{ step.failed_message }}</span></p>
-          <p class="lead mt-2" v-else-if="success === false"><span>{{ step.failed_message }}</span></p>
+          <p class="lead mt-2" v-if="success === true"><span><img :src="step.img" class="rounded mx-auto d-block" height= 180px/>{{ step.success_message }}</span></p>
+          <p class="lead mt-2" v-else-if="success === false"><span><img :src="step.img" class="rounded mx-auto d-block" height= 180px/>{{ step.failed_message }}</span></p>
           <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Next Question</button>
         </div>
 
